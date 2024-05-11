@@ -35,11 +35,12 @@ RUN curl -LO https://github.com/Azure/kubelogin/releases/download/v0.0.20/kubelo
     mv bin/linux_amd64/kubelogin /usr/local/bin/ && \
     rm -rf kubelogin-linux-amd64.zip bin/
 
+# Copy the Istio installation script
+COPY install-istio.sh /usr/local/bin/
+
 # Install istioctl
-RUN ISTIO_VERSION=1.17.1 && \
-    curl -L https://istio.io/downloadIstio | ISTIO_VERSION=${ISTIO_VERSION} sh - && \
-    mv istio-${ISTIO_VERSION}/bin/istioctl /usr/local/bin/ && \
-    rm -rf istio-${ISTIO_VERSION}
+RUN chmod +x /usr/local/bin/install-istio.sh && \
+    /usr/local/bin/install-istio.sh
 
 # Set the default shell to PowerShell
 SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
