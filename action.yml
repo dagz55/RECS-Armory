@@ -1,8 +1,0 @@
-name: 'Setup Node.js environment'
-description: 'Setup a Node.js environment by adding problem matchers and optionally downloading and adding it to the PATH.'
-author: 'GitHub'
-runs:
-  using: 'node20'
-  main: 'dist/setup/index.js'
-  post: 'dist/cache-save/index.js'
-  post-if: success()
