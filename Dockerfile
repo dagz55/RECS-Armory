@@ -1,8 +1,8 @@
 FROM mcr.microsoft.com/powershell:latest
 
-# Install dependencies (curl, gnupg)
+# Install dependencies (curl, gnupg, unzip)
 RUN apt-get update && \
-    apt-get install -y curl gnupg && \
+    apt-get install -y curl gnupg unzip && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Python
