@@ -1,4 +1,4 @@
-# 🚀 RECS AMORY by Robert Suarez
+# 🚀 RECS ARMORY by Robert Suarez
 
 ![Docker Build](https://github.com/rsuar29/recs-armory/workflows/Docker%20Build/badge.svg)
 
